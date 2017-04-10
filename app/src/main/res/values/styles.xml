@@ -1,0 +1,106 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--- both of the below are required in AppCompat apparently, else App will crash -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="root">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="mediaContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="background">@color/white</item>
+    </style>
+
+    <style name="headerLogo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">@dimen/headerLogoMaxHeight</item>
+        <item name="android:src">@drawable/sundowner_logo</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style name="layer1items">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:alpha">@dimen/ui_alpha</item>
+    </style>
+
+    <style name="welcome_portrait">
+        <item name="android:padding">@dimen/welcomePadding</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="containerMainP">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:padding">@dimen/containerMainPadding</item>
+    </style>
+
+    <style name="containerMainL">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/headerLogo</item>
+        <item name="android:layout_toLeftOf">@+id/syndicationContainer</item>
+        <item name="android:paddingRight">@dimen/containerMainPadding</item>
+        <item name="android:paddingLeft">@dimen/syndicationMaxHeight</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:orientation">vertical</item>
+
+
+    </style>
+
+    <style name="welcomeMsg2" parent="welcome_portrait">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/welcomeMsg2TextSize</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">normal|bold</item>
+    </style>
+
+    <style name="syndicationContainerP">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="syndicationContainerL" parent="@style/syndicationContainerP">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_alignParentBottom">false</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="syndication">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@null</item>
+        <item name="background">@null</item>
+       <!-- <item name="android:tint">#fff</item>-->
+        <item name="android:maxHeight">@dimen/syndicationMaxHeight</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">@dimen/syndicationMarginBottom</item>
+    </style>
+</resources>

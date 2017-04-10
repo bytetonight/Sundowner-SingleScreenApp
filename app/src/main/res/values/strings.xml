@@ -1,0 +1,33 @@
+<resources>
+    <string name="demo_button">A Random Button</string>
+    <string name="app_name">Sundowner</string>
+    <string name="cd_facebook">View our Facebook content</string>
+    <string name="cd_twitter">View our Twitter content</string>
+    <string name="cd_mail">Send us an E-Mail</string>
+    <string name="cd_phone">Give us a call</string>
+    <string name="cd_map">Our Location</string>
+    <string name="cd_headerLogo">The Sundowner Logo</string>
+
+    <string name="tagFacebook">MyOwnFacebook</string>
+    <string name="tagTwitter">MyOwnTwitter</string>
+    <string name="tagPhoneCall">MyOwnPhoneCall</string>
+    <string name="tagEmail">MyOwnEmail</string>
+    <string name="tagMap">MyOwnMapLocation</string>
+    <string name="action_call">tel: +1 2345 678 9 </string>
+    <string name="action_email">service@coming-soon.com</string>
+    <string name="action_map">"https://www.google.de/maps/place/Nowhere/@40.7317736,-73.9863048,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2599e15cc5767:0xb6a29990f3d58a91!8m2!3d40.7317696!4d-73.9841161"</string>
+
+    <string name="welcomeMsg1">The day is almost over.
+            \nCome and join us at the Sundowner. Meet like-minded people and have couple of delicious cocktails. Enjoy the view and the ambient music.</string>
+    <string name="welcomeMsg2">Relax</string>
+    <string name="welcomeMsg3">Coming soon... </string>
+
+    <string-array name="tagIntents">
+        <item>@string/tagFacebook</item>
+        <item>@string/tagTwitter</item>
+        <item>@string/tagPhoneCall</item>
+        <item>@string/tagEmail</item>
+        <item>@string/tagMap</item>
+    </string-array>
+
+</resources>

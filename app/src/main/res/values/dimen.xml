@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="ui_alpha" type="dimen" format="float">0.5</item>
+    <dimen name="headerLogoMaxHeight">100dp</dimen>
+    <dimen name="welcomePadding">0dp</dimen>
+    <dimen name="containerMainPadding">4dp</dimen>
+    <dimen name="syndicationMaxHeight">48dp</dimen>
+    <dimen name="syndicationMarginBottom">4dp</dimen>
+    <dimen name="welcomeMsg2TextSize">80dp</dimen>
+</resources>
