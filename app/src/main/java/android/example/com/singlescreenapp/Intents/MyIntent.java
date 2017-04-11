@@ -9,14 +9,14 @@ import android.content.Intent;
 
 public abstract class MyIntent
 {
-    protected Context context = null;
+    Context context = null;
 
     private MyIntent()
     {
 
     }
 
-    public MyIntent(Context c)
+    MyIntent(Context c)
     {
         context = c;
     }

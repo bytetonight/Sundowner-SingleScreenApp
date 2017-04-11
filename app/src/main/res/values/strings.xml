@@ -1,5 +1,5 @@
 <resources>
-    <string name="demo_button">A Random Button</string>
+    <!--<string name="demo_button">A Random Button</string>-->
     <string name="app_name">Sundowner</string>
     <string name="cd_facebook">View our Facebook content</string>
     <string name="cd_twitter">View our Twitter content</string>
@@ -20,14 +20,14 @@
     <string name="welcomeMsg1">The day is almost over.
             \nCome and join us at the Sundowner. Meet like-minded people and have couple of delicious cocktails. Enjoy the view and the ambient music.</string>
     <string name="welcomeMsg2">Relax</string>
-    <string name="welcomeMsg3">Coming soon... </string>
+    <string name="welcomeMsg3">Coming soon…</string>
 
-    <string-array name="tagIntents">
+    <!--<string-array name="tagIntents">
         <item>@string/tagFacebook</item>
         <item>@string/tagTwitter</item>
         <item>@string/tagPhoneCall</item>
         <item>@string/tagEmail</item>
         <item>@string/tagMap</item>
-    </string-array>
+    </string-array>-->
 
 </resources>

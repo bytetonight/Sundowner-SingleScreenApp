@@ -15,17 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.WindowManager;
-
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -107,30 +103,6 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         btnMap.setOnTouchListener(this);
     }
 
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)
-    {
-        switch (keyCode)
-        {
-            case KeyEvent.KEYCODE_MENU:
-                Toast.makeText(this, "Menu key pressed", Toast.LENGTH_SHORT).show();
-                return true;
-            case KeyEvent.KEYCODE_SEARCH:
-                Toast.makeText(this, "Search key pressed", Toast.LENGTH_SHORT).show();
-                return true;
-            case KeyEvent.KEYCODE_BACK:
-                onBackPressed();
-                return true;
-            case KeyEvent.KEYCODE_VOLUME_UP:
-                event.startTracking();
-                return true;
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
-                Toast.makeText(this, "Volumen Down pressed", Toast.LENGTH_SHORT).show();
-                return false;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 
 
     /**

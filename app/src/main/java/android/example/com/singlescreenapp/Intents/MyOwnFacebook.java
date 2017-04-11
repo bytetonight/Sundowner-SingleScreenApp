@@ -31,7 +31,7 @@ public class MyOwnFacebook extends MyIntent
             if (intent.resolveActivity(context.getPackageManager()) != null)
                 return intent;
 
-            throw new AppNotAvailableException("Google Maps not available");
+            throw new AppNotAvailableException("Facebook App not available");
         }
         catch (AppNotAvailableException e)
         {
