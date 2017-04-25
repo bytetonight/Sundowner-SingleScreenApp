@@ -25,16 +25,19 @@ public class MyOwnEmail extends MyIntent
         {
             Intent intent;
             intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {context.getString(R.string.action_email)});
+            // only email apps should handle the mailto Uri
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{context.getString(R.string.action_email)});
+            intent.setData(Uri.parse(context.getString(R.string.intentUriEmail)));
             if (intent.resolveActivity(context.getPackageManager()) != null)
                 return intent;
 
-            throw new AppNotAvailableException("No Email client installed or configured");
+            String exMsg = String.format(context.getString(R.string.appNotAvailableMsg),
+                    context.getString(R.string.appNameEmail));
+            throw new AppNotAvailableException(exMsg);
         }
         catch (AppNotAvailableException e)
         {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/gmail/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.webEmail)));
         }
     }
 }

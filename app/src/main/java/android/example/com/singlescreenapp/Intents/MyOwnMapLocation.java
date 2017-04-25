@@ -21,25 +21,28 @@ public class MyOwnMapLocation extends MyIntent
     @Override
     public Intent create()
     {
+        // Create a Uri from an intent string. Use the result to create an Intent.
+        Uri intentUri = Uri.parse(context.getString(R.string.intentUriGoogleMaps));
+
         try
         {
             Intent intent;
-            // Create a Uri from an intent string. Use the result to create an Intent.
-            Uri gmmIntentUri = Uri.parse(context.getString(R.string.action_map));
 
-            // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
-            intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            // Create an Intent from intentUri. Set the action to ACTION_VIEW
+            intent = new Intent(Intent.ACTION_VIEW, intentUri);
             // Make the Intent explicit by setting the Google Maps package
-            intent.setPackage("com.google.android.apps.maps");
+            intent.setPackage(context.getString(R.string.packageGoogleMaps));
 
             if (intent.resolveActivity(context.getPackageManager()) != null)
                 return intent;
 
-            throw new AppNotAvailableException("Google Maps not available");
+            String exMsg = String.format(context.getString(R.string.appNotAvailableMsg),
+                    context.getString(R.string.appNameGoogleMaps));
+            throw new AppNotAvailableException(exMsg);
         }
         catch (AppNotAvailableException e)
         {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.action_map)));
+            return new Intent(Intent.ACTION_VIEW, intentUri);
         }
     }
 }

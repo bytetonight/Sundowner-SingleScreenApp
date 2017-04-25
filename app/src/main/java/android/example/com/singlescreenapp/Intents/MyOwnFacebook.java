@@ -2,6 +2,7 @@ package android.example.com.singlescreenapp.Intents;
 
 import android.content.Context;
 import android.content.Intent;
+import android.example.com.singlescreenapp.R;
 import android.example.com.singlescreenapp.exceptions.AppNotAvailableException;
 import android.net.Uri;
 
@@ -25,17 +26,19 @@ public class MyOwnFacebook extends MyIntent
         try
         {
 
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://root"));
-            intent.setPackage("com.facebook.katana");
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.intentUriFacebook)));
+            intent.setPackage(context.getString(R.string.packageFacebook));
 
             if (intent.resolveActivity(context.getPackageManager()) != null)
                 return intent;
 
-            throw new AppNotAvailableException("Facebook App not available");
+            String exMsg = String.format(context.getString(R.string.appNotAvailableMsg),
+                    context.getString(R.string.appNameFacebook));
+            throw new AppNotAvailableException(exMsg);
         }
         catch (AppNotAvailableException e)
         {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.webFacebook)));
         }
     }
 }

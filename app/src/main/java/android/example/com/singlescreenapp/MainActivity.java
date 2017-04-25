@@ -22,38 +22,28 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class MainActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener, View.OnTouchListener
 {
-
-
     // Log tag
     private static final String TAG = MainActivity.class.getName();
-
     // Asset video file name
     private static final String BACKGROUND_VIDEO = "silk_1.mp4";
-
     // MediaPlayer instance to control playback of video file.
     private MediaPlayer mMediaPlayer;
     private TextureView mTextureView;
-
-    //Allowed Intents (for Class Loader)
-    //private String[] allowedIntents;
-
-
     private Rect rect;
     private Boolean processClick = false;
-
     private ImageButton btnFacebook;
     private ImageButton btnTwitter;
     private ImageButton btnPhoneCall;
     private ImageButton btnEmail;
     private ImageButton btnMap;
-
-
     private float mVideoWidth;
     private float mVideoHeight;
 
@@ -63,18 +53,12 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //allowedIntents = getResources().getStringArray(R.array.tagIntents);
-
         /**
          * Keep the Screen from dimming without requesting permissions in manifest.
          */
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
         prepareMembers();
-
         rigTouchables();
-
-
         calculateVideoSize();
         initView();
         Display display = getWindowManager().getDefaultDisplay();
@@ -92,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         btnPhoneCall = (ImageButton) findViewById(R.id.btn_phone);
         btnEmail = (ImageButton) findViewById(R.id.btn_mail);
         btnMap = (ImageButton) findViewById(R.id.btn_map);
-   }
+    }
 
     private void rigTouchables()
     {
@@ -102,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         btnEmail.setOnTouchListener(this);
         btnMap.setOnTouchListener(this);
     }
-
 
 
     /**
@@ -124,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                 case MotionEvent.ACTION_DOWN: /** Pressed & Held */
                     processClick = true;
                     rect = new Rect(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
-                    int imageButtonHighLight = ContextCompat.getColor(MainActivity.this, R.color.imageButtonHighLight);
+                    int imageButtonHighLight = ContextCompat.getColor(
+                            MainActivity.this, R.color.imageButtonHighLight);
 
                     ((ImageButton) v).setColorFilter(Color.argb(
                             Color.alpha(imageButtonHighLight),
@@ -135,7 +119,8 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                     return true; // if you want to handle the touch event
 
                 case MotionEvent.ACTION_MOVE: /** finger slide */
-                    if (!rect.contains(v.getLeft() + (int) event.getX(), v.getTop() + (int) event.getY()))
+                    if (!rect.contains(v.getLeft() + (int) event.getX(),
+                            v.getTop() + (int) event.getY()))
                     {
                         // User moved outside bounds
                         processClick = false;
@@ -167,10 +152,10 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                 return;*/
 
             /**
-            Only Classes starting with the prefix "MyOwn" can be instantiated here,
-            to prevent accidental or intentional injection and execution of
-            potentially dangerous code (I think)
-            */
+             Only Classes starting with the prefix "MyOwn" can be instantiated here,
+             to prevent accidental or intentional injection and execution of
+             potentially dangerous code (I think)
+             */
             if (!targetClass.startsWith("MyOwn"))
                 return;
 
@@ -183,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                  A somewhat different approach to RIP Pattern (Replace If with Polymorphism)
                  This approach allows me to add unlimited intents without changing this code,
                  and without using loads of IF statements or switch.
-                */
+                 */
 
                 Class<?> classToLoad = Class.forName(fullyQualifiedClassName);
                 Constructor<?> con = classToLoad.getConstructors()[0];
@@ -250,7 +235,6 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
 
         Matrix matrix = new Matrix();
         matrix.setScale(scaleX, scaleY, pivotPointX, pivotPointY);
-
 
         mTextureView.setTransform(matrix);
         mTextureView.setLayoutParams(new RelativeLayout.LayoutParams(viewWidth, viewHeight));

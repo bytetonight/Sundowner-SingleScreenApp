@@ -29,12 +29,12 @@
         <TextView
             style="@style/welcomeMsg2"
             android:text="@string/welcomeMsg2"/>
+
         <TextView
             style="@style/welcome_portrait"
             android:text="@string/welcomeMsg3"/>
 
     </LinearLayout>
-
 
 
     <LinearLayout
@@ -43,38 +43,38 @@
 
         <ImageButton
             android:id="@+id/btn_facebook"
-            android:tag="@string/tagFacebook"
             style="@style/syndication"
             android:contentDescription="@string/cd_facebook"
-            android:src="@drawable/icon_facebook"/>
+            android:src="@drawable/icon_facebook"
+            android:tag="@string/tagFacebook"/>
 
         <ImageButton
             android:id="@+id/btn_twitter"
-            android:tag="@string/tagTwitter"
             style="@style/syndication"
             android:contentDescription="@string/cd_twitter"
-            android:src="@drawable/icon_twitter"/>
+            android:src="@drawable/icon_twitter"
+            android:tag="@string/tagTwitter"/>
 
         <ImageButton
             android:id="@+id/btn_mail"
-            android:tag="@string/tagEmail"
             style="@style/syndication"
             android:contentDescription="@string/cd_mail"
-            android:src="@drawable/icon_mail"/>
+            android:src="@drawable/icon_mail"
+            android:tag="@string/tagEmail"/>
 
         <ImageButton
             android:id="@+id/btn_phone"
-            android:tag="@string/tagPhoneCall"
             style="@style/syndication"
             android:contentDescription="@string/cd_phone"
-            android:src="@drawable/icon_phone"/>
+            android:src="@drawable/icon_phone"
+            android:tag="@string/tagPhoneCall"/>
 
         <ImageButton
             android:id="@+id/btn_map"
-            android:tag="@string/tagMap"
             style="@style/syndication"
             android:contentDescription="@string/cd_map"
-            android:src="@drawable/icon_maps"/>
+            android:src="@drawable/icon_maps"
+            android:tag="@string/tagMap"/>
 
     </LinearLayout>
 

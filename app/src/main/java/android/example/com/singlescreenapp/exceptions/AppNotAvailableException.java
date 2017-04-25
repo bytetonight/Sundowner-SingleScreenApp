@@ -6,7 +6,8 @@ package android.example.com.singlescreenapp.exceptions;
 
 public class AppNotAvailableException extends Exception
 {
-    public AppNotAvailableException(String message){
+    public AppNotAvailableException(String message)
+    {
         super(message);
     }
 }

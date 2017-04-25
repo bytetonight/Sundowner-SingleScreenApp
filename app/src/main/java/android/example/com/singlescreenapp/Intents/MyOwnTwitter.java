@@ -3,6 +3,7 @@ package android.example.com.singlescreenapp.Intents;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.example.com.singlescreenapp.R;
 import android.example.com.singlescreenapp.exceptions.AppNotAvailableException;
 import android.net.Uri;
 
@@ -32,7 +33,9 @@ public class MyOwnTwitter extends MyIntent
             if (intent.resolveActivity(context.getPackageManager()) != null)
                 return intent;
 
-            throw new AppNotAvailableException("Twitter not available");
+            String exMsg = String.format(context.getString(R.string.appNotAvailableMsg),
+                    context.getString(R.string.appNameTwitter));
+            throw new AppNotAvailableException(exMsg);
         }
         catch (PackageManager.NameNotFoundException n)
         {
@@ -45,7 +48,8 @@ public class MyOwnTwitter extends MyIntent
         finally
         {
             // no Twitter app, revert to browser
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/"));
+            intent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(context.getString(R.string.webTwitter)));
             return intent;
         }
     }

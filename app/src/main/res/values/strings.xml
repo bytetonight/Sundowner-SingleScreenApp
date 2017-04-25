@@ -1,5 +1,4 @@
 <resources>
-    <!--<string name="demo_button">A Random Button</string>-->
     <string name="app_name">Sundowner</string>
     <string name="cd_facebook">View our Facebook content</string>
     <string name="cd_twitter">View our Twitter content</string>
@@ -15,12 +14,33 @@
     <string name="tagMap">MyOwnMapLocation</string>
     <string name="action_call">tel: +1 2345 678 9 </string>
     <string name="action_email">service@coming-soon.com</string>
-    <string name="action_map">"https://www.google.de/maps/place/Nowhere/@40.7317736,-73.9863048,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2599e15cc5767:0xb6a29990f3d58a91!8m2!3d40.7317696!4d-73.9841161"</string>
+
 
     <string name="welcomeMsg1">The day is almost over.
             \nCome and join us at the Sundowner. Meet like-minded people and have couple of delicious cocktails. Enjoy the view and the ambient music.</string>
     <string name="welcomeMsg2">Relax</string>
     <string name="welcomeMsg3">Coming soon…</string>
+
+    <string name="appNotAvailableMsg">%1s not available or not configured</string>
+
+    <string name="appNameFacebook">Facebook</string>
+    <string name="packageFacebook">com.facebook.katana</string>
+    <string name="intentUriFacebook">fb://root</string>
+    <string name="webFacebook">https://www.facebook.com/</string>
+
+    <string name="appNameTwitter">Twitter</string>
+    <string name="packageTwitter">com.twitter.android</string>
+    <string name="intentUriTwitter">twitter://root</string>
+    <string name="webTwitter">https://twitter.com/</string>
+
+    <string name="appNameGoogleMaps">Google Maps</string>
+    <string name="packageGoogleMaps">com.google.android.apps.maps</string>
+    <string name="intentUriGoogleMaps">https://www.google.com/maps/place/Nowhere/@40.7317736,-73.9863048,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2599e15cc5767:0xb6a29990f3d58a91!8m2!3d40.7317696!4d-73.9841161</string>
+    <string name="webGoogleMaps">@string/intentUriGoogleMaps</string>
+
+    <string name="appNameEmail">Email client</string>
+    <string name="intentUriEmail">mailto:</string>
+    <string name="webEmail">https://www.google.com/gmail/</string>
 
     <!--<string-array name="tagIntents">
         <item>@string/tagFacebook</item>
