@@ -103,4 +103,9 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginBottom">@dimen/syndicationMarginBottom</item>
     </style>
+
+    <style name="fragment_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>

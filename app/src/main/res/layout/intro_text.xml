@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+style="@style/containerMainP">
+
+<TextView
+    style="@style/welcome_portrait"
+    android:text="@string/welcomeMsg1"/>
+
+<TextView
+    style="@style/welcomeMsg2"
+    android:text="@string/welcomeMsg2"/>
+
+<TextView
+    style="@style/welcome_portrait"
+    android:text="@string/welcomeMsg3"/>
+
+</LinearLayout>

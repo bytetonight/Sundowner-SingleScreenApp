@@ -1,5 +1,6 @@
 package android.example.com.singlescreenapp;
 
+import android.app.Fragment;
 import android.content.res.AssetFileDescriptor;
 import android.example.com.singlescreenapp.Intents.MyIntent;
 
@@ -10,6 +11,8 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
     private ImageButton btnMap;
     private float mVideoWidth;
     private float mVideoHeight;
+    private IntroFragment currentFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -67,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         int width = size.x;
         int height = size.y;
         updateTextureViewSize(width, height);
+
+        currentFragment = IntroFragment.newInstance(/* add your params here*/);
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+        ft.replace(R.id.fragment_container, currentFragment, null);
+        ft.commit();
     }
 
     private void prepareMembers()

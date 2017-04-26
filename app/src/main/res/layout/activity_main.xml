@@ -18,7 +18,12 @@
         android:contentDescription="@string/cd_headerLogo"/>
 
 
-    <LinearLayout
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        style="@style/containerMainP" />
+
+    <!--<LinearLayout
         style="@style/containerMainP">
 
         <TextView
@@ -33,7 +38,7 @@
             style="@style/welcome_portrait"
             android:text="@string/welcomeMsg3"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
 
     <LinearLayout
