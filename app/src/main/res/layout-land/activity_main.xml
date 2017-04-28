@@ -18,23 +18,24 @@
         android:contentDescription="@string/cd_headerLogo"/>
 
 
-    <LinearLayout
-        style="@style/containerMainL">
+    <!--
+        Note that I am positioning the FrameLayout relative to the LinearLayout below that.
+        The special case here is that usually to address a View with its Id, you'd write
+        android:layout_toStartOf="@id/syndicationContainer" but I am writing
+        android:layout_toStartOf="@+id/syndicationContainer".
 
-        <TextView
-            android:id="@+id/textView"
-            style="@style/welcome_portrait"
-            android:text="@string/welcomeMsg1"/>
+        This is because when the XML is being parsed, syndicationContainer does not yet exist
+        and the code will not run since syndicationContainer is defined after my FrameLayout.
 
-        <TextView
-            style="@style/welcomeMsg2"
-            android:text="@string/welcomeMsg2"/>
-
-        <TextView
-            style="@style/welcome_portrait"
-            android:text="@string/welcomeMsg3"/>
-
-    </LinearLayout>
+        In order to make it run regardless of the above problem .... tadaa
+    -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:name="android.example.com.singlescreenapp.IntroFragment"
+        style="@style/containerMainP"
+        android:layout_toStartOf="@+id/syndicationContainer"
+        android:layout_toLeftOf="@+id/syndicationContainer"
+        tools:layout="@layout/intro_text"/>
 
 
     <LinearLayout

@@ -121,11 +121,13 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                     int imageButtonHighLight = ContextCompat.getColor(
                             MainActivity.this, R.color.imageButtonHighLight);
 
-                    ((ImageButton) v).setColorFilter(Color.argb(
+                    ((ImageButton) v).setColorFilter(
+                            Color.argb(
                             Color.alpha(imageButtonHighLight),
                             Color.red(imageButtonHighLight),
                             Color.green(imageButtonHighLight),
-                            Color.blue(imageButtonHighLight))); // Set Tint from colors.xml
+                            Color.blue(imageButtonHighLight))
+                    ); // Set Tint from colors.xml
 
                     return true; // if you want to handle the touch event
 
